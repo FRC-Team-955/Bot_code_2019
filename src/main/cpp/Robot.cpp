@@ -30,7 +30,7 @@ frc::Joystick *joy;
 TalonSRX *talon_drive_left_enc, *talon_drive_right_enc, *talon_drive_left_noenc, *talon_drive_right_noenc,
 	*talon_elevator,
 	*talon_intake_wheels, *talon_intake_clamp, *talon_intake_pivot,
-	*talon_climber_vertical, *talon_climber_wheels;
+	*talon_climber_arm, *talon_climber_wheels;
 // classes
 Drivebase *drivebase;
 Elevator *elevator;
@@ -67,7 +67,7 @@ void Robot::RobotInit() {
 	talon_intake_clamp=new TalonSRX( intake_clamp_talonnum );
 	talon_intake_pivot=new TalonSRX( intake_pivot_talonnum );
 
-	talon_climber_vertical=new TalonSRX( climber_vertical_talonnum );
+	talon_climber_arm=new TalonSRX( climber_vertical_talonnum );
 	talon_climber_wheels=new TalonSRX( climber_wheels_talonnum );
 
 	// initialize classes
@@ -100,7 +100,7 @@ void Robot::RobotInit() {
 
 	climber=new Climber(
 		joy,
-		talon_climber_vertical,
+		talon_climber_arm,
 		talon_climber_wheels);
 
 	pid=new PID(
@@ -118,7 +118,7 @@ void Robot::RobotInit() {
 		talon_drive_right_noenc,
 		talon_drive_right_enc,
 		talon_intake_wheels,
-		talon_climber_vertical,
+		talon_climber_arm,
 		talon_climber_wheels,
 		talon_elevator,
 		talon_intake_clamp,

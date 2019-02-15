@@ -20,7 +20,7 @@ public:
 		std::cout<<"\n\t\televator";
 	};
 
-	// run given height values
+	// set height values
 	void calibrate (
 		double rocket_low_hatch_pos,
 		double rocket_low_ball_pos,
@@ -29,6 +29,9 @@ public:
 		double rocket_high_hatch_pos,
 		double rocket_high_ball_pos
 	);
+
+	// write to the talon using preset settings
+	void writeToTalon(float vel);
 
 	// run this in TeleopPeriodic
 	void update();
@@ -44,9 +47,9 @@ private:
 			rocket_high_ball_pos;
 
 	int current_elevator_pos=1;
-	int toggle1=0, toggle2=0;
-	int toggle_hatch1=0;
-	int mode=0;
+	int auto_toggle1=0, auto_toggle2=0;
+	bool toggle_hatch1=false;
+	bool man_mode=false;
 	int mode_toggle1=0, mode_toggle2=0;
 };
 

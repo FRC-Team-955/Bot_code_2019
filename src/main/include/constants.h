@@ -67,6 +67,7 @@ const int intake_clamp_open_joynum = 4;
 
 // wheel velocities
 const float drive_max_speed = 0.8;
+const float elevator_max_speed = 0.15;
 const float intake_wheels_speed = 0.4;
 const float intake_clamp_speed  = 0.4;
 const float diagnostic_test_speed = 0.5;
@@ -75,8 +76,7 @@ const float diagnostic_test_speed = 0.5;
 // exponents for variable motion values- this way, most of the joystick's range will correspond to low values, and only the extremes will make high speeds
 const int drive_move_exp = 2;
 const int drive_turn_exp = 3;
-const int elevator_up_exp = 2;
-const int elevator_down_exp = 2;
+const int elevator_move_exp = 3;
 
 // raise number to given exponent, but preserve its sign. I made it a preproccessor macro so the compiler wouldn't complain about defining a function multiple times, and it is faster anyway.
 #define signedpow(val,exp) copysignf(powf(val,exp),val)

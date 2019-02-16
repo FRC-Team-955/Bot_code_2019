@@ -3,6 +3,7 @@
 
 #include <frc/WPILib.h>
 #include <frc/Joystick.h>
+#include <frc/Servo.h>
 #include <ctre/Phoenix.h>
 #include <iostream>
 #include <math.h>
@@ -35,7 +36,11 @@ const int climber_wheels_talonnum = 7;
 // joystick 0 axis numbers
 const int drive_move_joynum = 1;
 const int drive_turn_joynum = 4;
+const int climber_arm_down_joynum = 3;
+const int climber_arm_up_joynum =4;
 // joystick 0 button numbers
+const int servo_toggle_joynum = 2;
+const int climber_wheels_joynum =1;
 
 // joystick 0 axis/button numbers for diagnostic mode
 const int diagnostic_tickup_joynum = 1;
@@ -70,6 +75,8 @@ const float drive_max_speed = 0.8;
 const float elevator_max_speed = 0.15;
 const float intake_wheels_speed = 0.4;
 const float intake_clamp_speed  = 0.4;
+const float climber_arm_max_speed = 0.2;
+const float climber_wheels_max_speed = 0.5;
 const float diagnostic_test_speed = 0.5;
 
 

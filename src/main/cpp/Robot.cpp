@@ -25,12 +25,14 @@
 using namespace frc;
 
 // Joystick
-frc::Joystick *joy;
+frc::Joystick *joy0, *joy1;
 // Talons
 TalonSRX *talon_drive_left_enc, *talon_drive_right_enc, *talon_drive_left_noenc, *talon_drive_right_noenc,
 	*talon_elevator,
 	*talon_intake_wheels, *talon_intake_clamp, *talon_intake_pivot,
 	*talon_climber_arm, *talon_climber_wheels;
+// Servo
+Servo *servo_lock;
 // classes
 Drivebase *drivebase;
 Elevator *elevator;
@@ -52,7 +54,8 @@ void Robot::RobotInit() {
 
 	// initialize joystick
 	std::cout<<"\n\t\tjoysticks";
-	joy = new Joystick(0);
+	joy0 = new Joystick(0);
+	joy1 = new Joystick(1);
 
 	// initialize talons
 	std::cout<<"\n\t\ttalons";
@@ -74,24 +77,24 @@ void Robot::RobotInit() {
 	std::cout<<"\ninitializing classes:";
 
 	drivebase=new Drivebase(
-		joy,
+		joy0,
 		talon_drive_left_enc,
 		talon_drive_left_noenc,
 		talon_drive_right_enc,
 		talon_drive_right_noenc);
 
 	elevator=new Elevator(
-		joy,
+		joy1,
 		talon_elevator);
 
 	intake_wheels=new Intake_wheels(
-		joy,
+		joy1,
 		talon_intake_wheels);
 	intake_clamp=new Intake_clamp(
-		joy,
+		joy1,
 		talon_intake_clamp);
 	intake_pivot=new Intake_pivot(
-		joy,
+		joy1,
 		talon_intake_pivot);
 	intake=new Intake(
 		intake_wheels,
@@ -99,9 +102,11 @@ void Robot::RobotInit() {
 		intake_pivot);
 
 	climber=new Climber(
-		joy,
+		joy0,
+		joy1,
 		talon_climber_arm,
-		talon_climber_wheels);
+		talon_climber_wheels,
+		servo_lock);
 
 	pid=new PID(
 		talon_drive_right_enc,
@@ -112,7 +117,7 @@ void Robot::RobotInit() {
 		talon_intake_clamp);
 
 	diagnostic=new Diagnostic(
-		joy,
+		joy0,
 		talon_drive_left_noenc,
 		talon_drive_left_enc,
 		talon_drive_right_noenc,

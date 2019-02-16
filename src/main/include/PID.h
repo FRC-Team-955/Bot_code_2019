@@ -9,12 +9,12 @@ public:
 	// initialize PID
 	PID(
 		// receive parameters
-		TalonSRX* talon_drive_right_enc,
-		TalonSRX* talon_drive_left_enc,
-		TalonSRX* talon_intake_pivot,
-		TalonSRX* talon_climber_enc,
-		TalonSRX* talon_elevator_enc,
-		TalonSRX* talon_seat
+		TalonSRX *talon_drive_right_enc,
+		TalonSRX *talon_drive_left_enc,
+		TalonSRX *talon_intake_pivot,
+		TalonSRX *talon_climber_enc,
+		TalonSRX *talon_elevator_enc,
+		TalonSRX *talon_seat
 	):
 		// initialize member variables
 		talon_drive_right_enc(talon_drive_right_enc),
@@ -28,14 +28,15 @@ public:
 		std::cout<<"initializing PID";
 	};
 
-	// run
-	void run_pid ();
+	// run this in teleopPeriodic
+	void update ();
+
 private:
-	TalonSRX* talon_drive_right_enc, *talon_drive_left_enc;
-	TalonSRX* talon_intake_pivot;
-	TalonSRX* talon_climber_enc;
-	TalonSRX* talon_elevator_enc;
-	TalonSRX* talon_seat;
+	TalonSRX *talon_drive_right_enc, *talon_drive_left_enc;
+	TalonSRX *talon_intake_pivot;
+	TalonSRX *talon_climber_enc;
+	TalonSRX *talon_elevator_enc;
+	TalonSRX *talon_seat;
 
 };
 

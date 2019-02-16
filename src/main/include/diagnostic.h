@@ -15,7 +15,7 @@ public:
 		TalonSRX *talon_drive_right_noenc,
 		TalonSRX *talon_drive_right_enc,
 		TalonSRX *talon_intake_wheels,
-		TalonSRX *talon_climber_vertical,
+		TalonSRX *talon_climber_arm,
 		TalonSRX *talon_climber_wheels,
 		TalonSRX *talon_elevator,
 		TalonSRX *talon_intake_clamp,
@@ -29,7 +29,7 @@ public:
             talon_drive_right_noenc,
             talon_drive_right_enc,
             talon_intake_wheels,
-            talon_climber_vertical,
+            talon_climber_arm,
 			talon_climber_wheels,
             talon_elevator,
             talon_intake_clamp,
@@ -51,6 +51,21 @@ private:
 
 	// all the talons are arranged in an array, so we can acces them by ID
 	TalonSRX* talonCatalog[10]={};
+	// velocities for all talons
+	const float test_vels[10]={
+		drive_max_speed,
+		drive_max_speed,
+		drive_max_speed,
+		drive_max_speed,
+		intake_wheels_speed,
+		climber_arm_max_speed,
+		climber_wheels_max_speed,
+		elevator_max_speed,
+		intake_clamp_speed,
+		intake_pivot_speed
+	};
+
+	// joystick
 	frc::Joystick *joy;
 
 	// which talon is being tested right now?

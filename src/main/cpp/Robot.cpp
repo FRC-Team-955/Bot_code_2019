@@ -159,10 +159,15 @@ void Robot::AutonomousPeriodic() {
 	}
 }
 
-void Robot::TeleopInit() {}
+void Robot::TeleopInit() {
+	pid->run();
+}
 
 void Robot::TeleopPeriodic() {
-	
+	drivebase->update();
+	elevator->update();
+	intake->update();
+	climber->update();
 }
 
 void Robot::TestInit(){

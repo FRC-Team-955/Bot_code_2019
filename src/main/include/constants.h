@@ -71,13 +71,14 @@ const int intake_clamp_open_joynum = 4;
 
 
 // wheel velocities
-const float drive_max_speed = 0.8;
+const float drive_max_speed = 0.6;
 const float elevator_max_speed = 0.15;
 const float intake_wheels_speed = 0.4;
-const float intake_clamp_speed  = 0.4;
+const float intake_clamp_speed  = 0.25;
+const float intake_pivot_speed  = 0.15;
 const float climber_arm_max_speed = 0.2;
 const float climber_wheels_max_speed = 0.5;
-const float diagnostic_test_speed = 0.5;
+const float diagnostic_default_speed = 0.5;
 
 
 // exponents for variable motion values- this way, most of the joystick's range will correspond to low values, and only the extremes will make high speeds

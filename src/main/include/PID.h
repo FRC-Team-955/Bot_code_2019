@@ -12,16 +12,16 @@ public:
 		TalonSRX *talon_drive_right_enc,
 		TalonSRX *talon_drive_left_enc,
 		TalonSRX *talon_intake_pivot,
-		TalonSRX *talon_climber_enc,
-		TalonSRX *talon_elevator_enc,
+		TalonSRX *talon_climber_wheels,
+		TalonSRX *talon_elevator,
 		TalonSRX *talon_seat
 	):
 		// initialize member variables
 		talon_drive_right_enc(talon_drive_right_enc),
 		talon_drive_left_enc(talon_drive_left_enc),
 		talon_intake_pivot(talon_intake_pivot),
-		talon_climber_enc(talon_climber_enc),
-		talon_elevator_enc(talon_elevator_enc),
+		talon_climber_wheels(talon_climber_wheels),
+		talon_elevator(talon_elevator),
 		talon_seat(talon_seat)
 	{
 		// run on initialization
@@ -29,13 +29,13 @@ public:
 	};
 
 	// run this in teleopPeriodic
-	void update ();
+	void run ();
 
 private:
 	TalonSRX *talon_drive_right_enc, *talon_drive_left_enc;
 	TalonSRX *talon_intake_pivot;
-	TalonSRX *talon_climber_enc;
-	TalonSRX *talon_elevator_enc;
+	TalonSRX *talon_climber_wheels;
+	TalonSRX *talon_elevator;
 	TalonSRX *talon_seat;
 
 };

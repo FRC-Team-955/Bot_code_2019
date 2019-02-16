@@ -21,7 +21,9 @@ void Diagnostic :: tickID (bool sign) {
 
 // change value of current talon
 void Diagnostic :: writeToCurrentTalon (float speed) {
-	talonCatalog[currentID]->Set(ControlMode::PercentOutput, speed );
+	talonCatalog[currentID]->Set(ControlMode::PercentOutput,
+		//each motor has different max speeds built in
+		speed * test_vels[currentID] );
 }
 
 // public handler for all diagnostic operations
@@ -46,7 +48,7 @@ void Diagnostic :: update () {
 	}
 
 	// update speed of current talon
-	writeToCurrentTalon(joy->GetRawAxis(diagnostic_test_joynum) * diagnostic_test_speed);
+	writeToCurrentTalon(joy->GetRawAxis(diagnostic_test_joynum));
 
 	// collect tick values for next frame
 	wasntPressedA = !joy->GetRawButton( diagnostic_tickup_joynum );

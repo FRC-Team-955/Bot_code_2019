@@ -67,7 +67,7 @@ void Robot::RobotInit() {
 	talon_intake_clamp=new TalonSRX( intake_clamp_talonnum );
 	talon_intake_pivot=new TalonSRX( intake_pivot_talonnum );
 
-	talon_climber_arm=new TalonSRX( climber_vertical_talonnum );
+	talon_climber_arm=new TalonSRX( climber_arm_talonnum );
 	talon_climber_wheels=new TalonSRX( climber_wheels_talonnum );
 
 	// initialize classes

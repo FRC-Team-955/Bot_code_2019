@@ -17,7 +17,7 @@ const int elevator_talonnum  = 8;
 const int intake_wheels_talonnum = 5;
 const int intake_clamp_talonnum = 9;
 const int intake_pivot_talonnum = 10;
-const int climber_vertical_talonnum = 6;
+const int climber_arm_talonnum = 6;
 const int climber_wheels_talonnum = 7;
 
 

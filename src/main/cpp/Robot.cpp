@@ -33,6 +33,8 @@ TalonSRX *talon_drive_left_enc, *talon_drive_right_enc, *talon_drive_left_noenc,
 	*talon_climber_arm, *talon_climber_wheels;
 // Servo
 Servo *servo_lock;
+// limit switches
+DigitalInput *limit_clamp_inner, *limit_clamp_outer;
 // classes
 Drivebase *drivebase;
 Elevator *elevator;
@@ -73,6 +75,13 @@ void Robot::RobotInit() {
 	talon_climber_arm=new TalonSRX( climber_arm_talonnum );
 	talon_climber_wheels=new TalonSRX( climber_wheels_talonnum );
 
+	// initialize servo
+	servo_lock = new Servo( servo_lock_rionum );
+
+	// initialize limit switches
+	limit_clamp_inner = new DigitalInput( clamp_inner_limitnum );
+	limit_clamp_outer = new DigitalInput( clamp_outer_limitnum );
+
 	// initialize classes
 	std::cout<<"\ninitializing classes:";
 
@@ -92,7 +101,9 @@ void Robot::RobotInit() {
 		talon_intake_wheels);
 	intake_clamp=new Intake_clamp(
 		joy1,
-		talon_intake_clamp);
+		talon_intake_clamp,
+		limit_clamp_inner,
+		limit_clamp_outer);
 	intake_pivot=new Intake_pivot(
 		joy1,
 		talon_intake_pivot);
@@ -164,8 +175,8 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-	drivebase->update();
-	elevator->update();
+	//drivebase->update();
+	//elevator->update();
 	intake->update();
 	climber->update();
 }

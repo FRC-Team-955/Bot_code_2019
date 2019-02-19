@@ -18,9 +18,14 @@ void Intake_clamp :: update () {
 	clampSpeed = 0.0;
 
 	// if either button is pressed, change the clamping velocity from zero
-	if(openButton) clampSpeed =-intake_clamp_speed;
+	//...but if the inner or outer limit has been reached, the corresponding direction is disabled
+	if(openButton && !limit_outer->Get() ){
+		clampSpeed =-intake_clamp_speed;
+	}
 	// if both buttons are pressed, "close" overwrites "open"
-	if(closeButton) clampSpeed = intake_clamp_speed;
+	if(closeButton && !limit_inner->Get() ){
+		 clampSpeed = intake_clamp_speed;
+	}
 
 	// write to motors
 	talon_clamp->Set(ControlMode::PercentOutput, clampSpeed );

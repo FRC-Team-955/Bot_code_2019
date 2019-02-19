@@ -4,6 +4,7 @@
 #include <frc/WPILib.h>
 #include <frc/Joystick.h>
 #include <frc/Servo.h>
+#include <frc/DigitalInput.h>
 #include <ctre/Phoenix.h>
 #include <iostream>
 #include <math.h>
@@ -15,11 +16,16 @@ const int drive_left_noenc_talonnum = 1;
 const int drive_right_enc_talonnum = 4;
 const int drive_right_noenc_talonnum = 3;
 const int elevator_talonnum  = 8;
-const int intake_wheels_talonnum = 5;
-const int intake_clamp_talonnum = 9;
-const int intake_pivot_talonnum = 10;
+const int intake_wheels_talonnum = 9;
+const int intake_clamp_talonnum = 10;
+const int intake_pivot_talonnum = 5;
 const int climber_arm_talonnum = 6;
 const int climber_wheels_talonnum = 7;
+
+// other RIO-interfacing hardware numbers
+const int servo_lock_rionum = 0;
+const int clamp_inner_limitnum = 0;
+const int clamp_outer_limitnum = 1;
 
 
 /*			Joystick #0
@@ -71,13 +77,13 @@ const int intake_clamp_open_joynum = 4;
 
 
 // wheel velocities
-const float drive_max_speed = 0.6;
-const float elevator_max_speed = 0.15;
-const float intake_wheels_speed = 0.4;
-const float intake_clamp_speed  = 0.25;
+const float drive_max_speed = 0;//.6;
+const float elevator_max_speed = 0;//.15;
+const float intake_wheels_speed = 0.3;
+const float intake_clamp_speed  = 0.4;
 const float intake_pivot_speed  = 0.15;
-const float climber_arm_max_speed = 0.2;
-const float climber_wheels_max_speed = 0.5;
+const float climber_arm_max_speed = 0.1;
+const float climber_wheels_max_speed = 0.3;
 const float diagnostic_default_speed = 0.5;
 
 

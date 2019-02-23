@@ -123,7 +123,7 @@ void Robot::RobotInit() {
 		talon_drive_right_enc,
 		talon_drive_left_enc,
 		talon_intake_pivot,
-		talon_climber_wheels,
+		talon_climber_arm,
 		talon_elevator,
 		talon_intake_clamp);
 
@@ -177,8 +177,11 @@ void Robot::TeleopInit() {
 void Robot::TeleopPeriodic() {
 	//drivebase->update();
 	//elevator->update();
-	intake->update();
-	climber->update();
+	//intake->update();
+	//climber->update();
+	if( joy0->GetRawButton(5) ){
+		diagnostic->update();
+	}
 }
 
 void Robot::TestInit(){
@@ -187,7 +190,9 @@ void Robot::TestInit(){
 
 void Robot::TestPeriodic() {
 	std::cout<<"yaboiiii\t";
-	diagnostic->update();
+	if( joy0->GetRawButton(5) ){
+		diagnostic->update();
+	}
 }
 
 #ifndef RUNNING_FRC_TESTS

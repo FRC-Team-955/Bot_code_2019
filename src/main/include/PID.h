@@ -12,7 +12,7 @@ public:
 		TalonSRX *talon_drive_right_enc,
 		TalonSRX *talon_drive_left_enc,
 		TalonSRX *talon_intake_pivot,
-		TalonSRX *talon_climber_wheels,
+		TalonSRX *talon_climber_arm,
 		TalonSRX *talon_elevator,
 		TalonSRX *talon_seat
 	):
@@ -20,7 +20,7 @@ public:
 		talon_drive_right_enc(talon_drive_right_enc),
 		talon_drive_left_enc(talon_drive_left_enc),
 		talon_intake_pivot(talon_intake_pivot),
-		talon_climber_wheels(talon_climber_wheels),
+		talon_climber_arm(talon_climber_arm),
 		talon_elevator(talon_elevator),
 		talon_seat(talon_seat)
 	{
@@ -34,7 +34,7 @@ public:
 private:
 	TalonSRX *talon_drive_right_enc, *talon_drive_left_enc;
 	TalonSRX *talon_intake_pivot;
-	TalonSRX *talon_climber_wheels;
+	TalonSRX *talon_climber_arm;
 	TalonSRX *talon_elevator;
 	TalonSRX *talon_seat;
 

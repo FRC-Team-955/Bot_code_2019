@@ -49,9 +49,9 @@ const int servo_toggle_joynum = 2;
 const int climber_wheels_joynum =1;
 
 // joystick 0 axis/button numbers for diagnostic mode
+const int diagnostic_test_joynum = 5;
 const int diagnostic_tickup_joynum = 1;
 const int diagnostic_tickdown_joynum = 2;
-const int diagnostic_test_joynum = 5;
 
 
 /*			Joystick #1

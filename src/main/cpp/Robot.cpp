@@ -171,15 +171,15 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
-	pid->run();
+	//pid->run();
 }
 
 void Robot::TeleopPeriodic() {
-	//drivebase->update();
-	//elevator->update();
-	//intake->update();
-	//climber->update();
-	if( joy0->GetRawButton(5) ){
+	drivebase->update();
+	elevator->update();
+	intake->update();
+	climber->update();
+	if( joy0->GetRawButton(7) ){
 		diagnostic->update();
 	}
 }

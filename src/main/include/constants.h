@@ -15,12 +15,12 @@ const int drive_left_enc_talonnum = 2;
 const int drive_left_noenc_talonnum = 1;
 const int drive_right_enc_talonnum = 4;
 const int drive_right_noenc_talonnum = 3;
-const int elevator_talonnum  = 8;
-const int intake_wheels_talonnum = 9;
-const int intake_clamp_talonnum = 10;
-const int intake_pivot_talonnum = 5;
-const int climber_arm_talonnum = 6;
-const int climber_wheels_talonnum = 7;
+const int elevator_talonnum  = 1;//8;
+const int intake_wheels_talonnum = 2;//9;
+const int intake_clamp_talonnum = 3;//10;
+const int intake_pivot_talonnum = 4;//5;
+const int climber_arm_talonnum = 1;//6;
+const int climber_wheels_talonnum = 2;//7;
 
 // other RIO-interfacing hardware numbers
 const int servo_lock_rionum = 0;

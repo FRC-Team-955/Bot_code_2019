@@ -52,7 +52,8 @@ void Robot::RobotInit() {
 	m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
 	frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 
-	std::cout<<"initializing:";
+	std::cout<<"hey hey hey, it's Andrew's drive code!"
+	<<std::endl<<"initializing:";
 
 	// initialize joystick
 	std::cout<<"\n\t\tjoysticks";
@@ -171,7 +172,8 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
-	//pid->run();
+	std::cout<<"hokay, les try dis wun aught"<<std::endl;
+	pid->run();
 }
 
 void Robot::TeleopPeriodic() {
@@ -179,9 +181,6 @@ void Robot::TeleopPeriodic() {
 	elevator->update();
 	intake->update();
 	climber->update();
-	if( joy0->GetRawButton(7) ){
-		diagnostic->update();
-	}
 }
 
 void Robot::TestInit(){
@@ -190,9 +189,7 @@ void Robot::TestInit(){
 
 void Robot::TestPeriodic() {
 	std::cout<<"yaboiiii\t";
-	if( joy0->GetRawButton(5) ){
-		diagnostic->update();
-	}
+	diagnostic->update();
 }
 
 #ifndef RUNNING_FRC_TESTS

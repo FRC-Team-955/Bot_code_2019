@@ -69,6 +69,7 @@ const int diagnostic_tickdown_joynum = 2;
 // joystick 1 axis numbers
 const int elevator_up_joynum = 3;
 const int elevator_down_joynum = 2;
+const int intake_pivot_joynum = 5;
 // joystick 1 button numbers
 const int intake_wheels_in_joynum = 5;
 const int intake_wheels_out_joynum = 6;
@@ -81,7 +82,7 @@ const int intake_clamp_open_joynum = 2;
 const float drive_max_speed = 0.6;
 const float elevator_max_speed = 0.15;
 const float intake_wheels_speed = 0.3;
-const float intake_clamp_speed  = 0.4;
+const float intake_clamp_speed  = 0.6;
 const float intake_pivot_speed  = 0.15;
 const float climber_arm_max_speed = 0.1;
 const float climber_wheels_max_speed = 0.3;

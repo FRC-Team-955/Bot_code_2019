@@ -141,7 +141,7 @@ void Robot::RobotInit() {
 		talon_intake_clamp,
 		talon_intake_pivot);
 
-	std::cout<<"\nyo, init complete!"<<std::endl;
+	std::cout<<"\nyo, init complete!"<<std::endl<<std::endl;
 }
 
 /*

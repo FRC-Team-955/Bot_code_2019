@@ -22,7 +22,7 @@ public:
 		lock_servo(lock_servo)
 	{
 		// run on initialization
-		std::cout<<"\n\tclimber";
+		std::cout<<"\n\t\tclimber";
 	};
 
 	// put this in teleopPeriodic

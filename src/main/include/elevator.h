@@ -49,7 +49,7 @@ private:
 	int current_elevator_pos=1;
 	int auto_toggle1=0, auto_toggle2=0;
 	bool toggle_hatch1=false;
-	bool man_mode=false;
+	bool man_mode=true;
 	int mode_toggle1=0, mode_toggle2=0;
 };
 

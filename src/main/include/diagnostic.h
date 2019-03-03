@@ -37,7 +37,7 @@ public:
 		}
 	{
 		// run on initialization
-		std::cout<<"\n\tdiagnostic";
+		std::cout<<"\n\t\tdiagnostic";
 	};
 
 	// run this in TestPeriodic

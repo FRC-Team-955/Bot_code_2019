@@ -25,7 +25,7 @@ public:
 		talon_seat(talon_seat)
 	{
 		// run on initialization
-		std::cout<<"initializing PID";
+		std::cout<<"\n\t\tPID";
 	};
 
 	// run this in teleopPeriodic

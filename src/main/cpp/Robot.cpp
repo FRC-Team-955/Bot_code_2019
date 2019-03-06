@@ -1,10 +1,3 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
-
 #include "Robot.h"
 #include <ctre/Phoenix.h>
 #include <frc/Joystick.h>
@@ -173,14 +166,18 @@ void Robot::AutonomousPeriodic() {
 
 void Robot::TeleopInit() {
 	std::cout<<"hokay, les try dis wun aught"<<std::endl;
-	pid->run();
 }
 
 void Robot::TeleopPeriodic() {
-	drivebase->update();
-	elevator->update();
-	intake->update();
-	climber->update();
+	// to run diagnostic, press button 1 on SmartDashboard
+	if( SmartDashboard::GetBoolean("Button 0",0.0) ){
+		diagnostic->update();
+	}else{
+		drivebase->update();
+		elevator->update();
+		intake->update();
+		climber->update();
+	}
 }
 
 void Robot::TestInit(){
@@ -188,8 +185,7 @@ void Robot::TestInit(){
 }
 
 void Robot::TestPeriodic() {
-	std::cout<<"yaboiiii\t";
-	diagnostic->update();
+	//std::cout<<"yaboiiii\t";
 }
 
 #ifndef RUNNING_FRC_TESTS

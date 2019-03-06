@@ -5,6 +5,8 @@ using namespace frc;
 
 // put this in TeleopPeriodic
 void Intake_pivot :: update () {
+	talon_intake_pivot->Set(ControlMode::PercentOutput, joy1->GetRawButton(intake_pivot_joynum)*intake_pivot_speed);
+/*
 	if (joy1->GetRawButton(5)==1 and toggle == 0 and toggle_two==0){
 
 		talon_intake_pivot->Set(ControlMode::Position, 20000);
@@ -23,4 +25,5 @@ void Intake_pivot :: update () {
 		toggle_two =0;
 		toggle = 0;
 	}
+*/
 }

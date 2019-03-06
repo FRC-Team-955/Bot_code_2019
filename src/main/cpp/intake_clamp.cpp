@@ -19,11 +19,11 @@ void Intake_clamp :: update () {
 
 	// if either button is pressed, change the clamping velocity from zero
 	//...but if the inner or outer limit has been reached, the corresponding direction is disabled
-	if(openButton && !limit_outer->Get() ){
+	if(openButton ){//&& !limit_outer->Get() ){
 		clampSpeed =-intake_clamp_speed;
 	}
 	// if both buttons are pressed, "close" overwrites "open"
-	if(closeButton && !limit_inner->Get() ){
+	if(closeButton ){//&& !limit_inner->Get() ){
 		 clampSpeed = intake_clamp_speed;
 	}
 
